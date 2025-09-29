@@ -328,7 +328,6 @@ const Login: React.FC = () => {
           </Text>
         </div>
 
-
         {/* Demo Credentials */}
         <Card 
           size="small" 
@@ -340,7 +339,7 @@ const Login: React.FC = () => {
           }}
         >
           <Title level={5} style={{ marginBottom: '1rem', color: '#0369A1', textAlign: 'center' }}>
-            🚀 Quick Demo Login
+            🚀 Demo Credentials
           </Title>
           <Space direction="vertical" size="small" style={{ width: '100%' }}>
             <div style={{ textAlign: 'center' }}>

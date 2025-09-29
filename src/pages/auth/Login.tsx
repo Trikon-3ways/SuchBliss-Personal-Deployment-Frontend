@@ -334,25 +334,60 @@ const Login: React.FC = () => {
           size="small" 
           style={{ 
             marginTop: '1.5rem', 
-            backgroundColor: '#F9FAFB',
-            border: '1px solid #E5E7EB'
+            backgroundColor: '#F0F9FF',
+            border: '2px solid #0EA5E9',
+            borderRadius: '8px'
           }}
         >
-          <Title level={5} style={{ marginBottom: '0.5rem', color: '#374151' }}>
-            Demo Credentials:
+          <Title level={5} style={{ marginBottom: '1rem', color: '#0369A1', textAlign: 'center' }}>
+            🚀 Quick Demo Login
           </Title>
           <Space direction="vertical" size="small" style={{ width: '100%' }}>
-            <Text type="secondary" style={{ fontSize: '12px' }}>
-              <strong>WhatsApp Login:</strong><br />
-              Phone: 9863779900<br />
-              (OTP will be sent to WhatsApp & SMS)
-            </Text>
+            <div style={{ textAlign: 'center' }}>
+              <Button
+                type="primary"
+                size="large"
+                block
+                style={{ marginBottom: '0.5rem' }}
+                onClick={() => {
+                  form.setFieldsValue({ phone: '+919863779900' });
+                  handlePhoneOTPLogin({ phone: '+919863779900' });
+                }}
+                loading={isLoading}
+              >
+                📱 Login as Test User (OTP)
+              </Button>
+              <Text type="secondary" style={{ fontSize: '11px' }}>
+                Phone: +919863779900
+              </Text>
+            </div>
+            
             <Divider style={{ margin: '0.5rem 0' }} />
-            <Text type="secondary" style={{ fontSize: '12px', color: '#DC2626' }}>
-              <strong>Admin Login:</strong><br />
-              Email: admin@suchbliss.com<br />
-              Password: admin123
-            </Text>
+            
+            <div style={{ textAlign: 'center' }}>
+              <Button
+                danger
+                size="large"
+                block
+                style={{ marginBottom: '0.5rem' }}
+                onClick={() => {
+                  form.setFieldsValue({ 
+                    email: 'admin@suchbliss.com',
+                    password: 'admin123'
+                  });
+                  handleAdminLogin({ 
+                    email: 'admin@suchbliss.com',
+                    password: 'admin123'
+                  });
+                }}
+                loading={isLoading}
+              >
+                👨‍💼 Login as Admin
+              </Button>
+              <Text type="secondary" style={{ fontSize: '11px' }}>
+                Email: admin@suchbliss.com | Password: admin123
+              </Text>
+            </div>
           </Space>
         </Card>
       </Card>
